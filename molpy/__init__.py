@@ -5,7 +5,7 @@ Molecule Manipulation Package
 
 # Add imports here
 from .molpy import *
-from . import util # Get util as a function of molpy
+from . import util 
 
 # Handle versioneer
 from ._version import get_versions
