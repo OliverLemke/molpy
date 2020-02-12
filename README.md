@@ -6,8 +6,6 @@ molpy
 
 Molecule Manipulation Package
 
-Hello GitHub
-
 ### Copyright
 
 Copyright (c) 2020, Oliver Lemke
