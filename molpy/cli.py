@@ -10,5 +10,14 @@ parser.add_argument('index2', type=int, help="Index of the second atom")
 def main():
 	args = parser.parse_args()
 	mol = molpy.util.read_xyz(args.filename)
-	print("The distance is %.3f Angstrom" %(molpy.util.distance(mol["geometry"][args.index1,:],mol["geometry"][args.index2,:])))
+	print(f"Reading XYZ-file:{args.filename}")
+	
+	s1 = mol["labels"][args.index1]
+	s2 = mol["labels"][args.index2]
+
+	print(f"Calculating distance between {s1} at index {args.index1} and {s2} at index {args.index2}")
+
+	dist = molpy.util.distance(mol["geometry"][args.index1,:],mol["geometry"][args.index2,:])
+
+	print(f"The distance is {dist:.3f} Angstrom")
 
