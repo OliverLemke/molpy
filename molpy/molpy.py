@@ -5,6 +5,8 @@ Molecule Manipulation Package
 Handles the primary functions
 """
 
+import numpy as np
+from .util import distance
 
 def canvas(with_attribution=True):
     """
@@ -27,6 +29,18 @@ def canvas(with_attribution=True):
     if with_attribution:
         quote += "\n\t- Adapted from Henry David Thoreau"
     return quote
+
+
+class Molecule:
+    def __init__(self,labels,geometry):
+        self.labels = np.asarray(labels)
+        self.geometry = np.asarray(geometry)
+        if len(self.geometry.shape) !=2:
+            self.geometry.reshape(-1,3)
+        if self.geometry.shape[0] != self.labels.shape[0]:
+            raise ValueError("Labels and Geometry do not have the same length")
+    def distance(self, index1, index2):
+        return distance(self.geometry[index1,:], self.geometry[index2,:])
 
 
 if __name__ == "__main__":
