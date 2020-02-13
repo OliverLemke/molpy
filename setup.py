@@ -29,6 +29,7 @@ setup(
     long_description_content_type="text/markdown",
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
+    entry_points={"console_scripts":["molpy-distance=molpy.cli:main",],},
     license='MIT',
 
     # Which Python importable modules should be included when your package is installed
