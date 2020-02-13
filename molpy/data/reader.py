@@ -3,10 +3,10 @@ import numpy as np
 from ..util import read_xyz
 
 dirname = os.path.dirname(os.path.abspath(__file__))
-filename=os.path.join(dirname,'look_and_say.dat') #works in general
+filename = os.path.join(dirname, 'look_and_say.dat')  #works in general
 
 with open(filename) as handle:
-    look_and_say=handle.read()
+    look_and_say = handle.read()
 
 #def get_molecule(molecule):
 #    filename_m=os.path.join(dirname,molecule+'.xyz')
@@ -19,6 +19,6 @@ with open(filename) as handle:
 #
 #atomic_mass = {'H': 1.00784, 'C': 12.0107,'O': 15.999}
 
+
 def get_molecule(molecule):
-    return read_xyz(os.path.join(dirname,molecule+'.xyz'))    
-    
+    return read_xyz(os.path.join(dirname, molecule + '.xyz'))
