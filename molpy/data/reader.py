@@ -9,4 +9,4 @@ with open(filename) as handle:
     look_and_say = handle.read()
 
 def get_molecule(molecule):
-    return read_xyz(os.path.join('data',molecule+'.xyz'))
+    return read_xyz(os.path.join(dirname,molecule+'.xyz'))
